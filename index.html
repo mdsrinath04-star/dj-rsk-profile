@@ -3,315 +3,579 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DJ RSK Music BD | Official Creator Portal</title>
-    <!-- হস্তলিখিত সিগনেচারের জন্য বাংলা ফন্ট যুক্ত করা হলো -->
-    <link href="https://fonts.googleapis.com/css2?family=Tiro+Bangla:ital@1&display=swap" rel="stylesheet">
+    <title>DJ RSK Music BD | Official Creator Portal & Legal Terms</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary-glow: #00f3ff;
-            --secondary-glow: #b000ff;
-            --bg-deep: #050508;
-            --card-bg: rgba(24, 24, 32, 0.75);
-            --border-color: rgba(0, 243, 255, 0.25);
+        * { box-sizing:border-box; margin:0; padding:0; }
+        :root{
+            --bg:#121622; --surface:#1a2130; --surface2:#222c40; --text:#f2f4f7; --text2:#d0d5dd;
+            --muted:#98a2b3; --border:#2e3a4e; --header:rgba(18,22,34,.95);
+            --warning-bg:#241c0d; --warning-border:#70511d; --danger-bg:#291412; --danger:#b42318;
+            --shadow:0 12px 35px rgba(0,0,0,.30);
         }
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-        }
-        body {
-            background-color: var(--bg-deep);
-            background-image: 
-                radial-gradient(circle at 10% 20%, rgba(0, 243, 255, 0.08) 0%, transparent 40%),
-                radial-gradient(circle at 90% 80%, rgba(176, 0, 255, 0.08) 0%, transparent 40%);
-            color: #ffffff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
-        .portal-wrapper {
-            width: 100%;
-            max-width: 480px;
-            background: var(--card-bg);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border-radius: 28px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 243, 255, 0.1);
-            padding: 35px 25px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        .portal-wrapper::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary-glow), var(--secondary-glow), var(--primary-glow));
-            background-size: 200% auto;
-            animation: shimmer 4s linear infinite;
-        }
-        @keyframes shimmer {
-            to { background-position: 200% center; }
-        }
-        .verified-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: rgba(0, 243, 255, 0.08);
-            color: var(--primary-glow);
-            font-size: 11px;
-            font-weight: 700;
-            padding: 6px 14px;
-            border-radius: 20px;
-            margin-bottom: 20px;
-            border: 1px solid rgba(0, 243, 255, 0.3);
-            letter-spacing: 1.2px;
-            text-transform: uppercase;
-        }
-        .verified-badge::before {
-            content: '✔';
-            font-size: 10px;
-        }
-        .avatar-container {
-            position: relative;
-            width: 130px;
-            height: 130px;
-            margin: 0 auto 15px;
-        }
-        .avatar-container::after {
-            content: '';
-            position: absolute;
-            inset: -4px;
-            border-radius: 50%;
-            background: linear-gradient(45deg, var(--primary-glow), var(--secondary-glow));
-            z-index: -1;
-            opacity: 0.7;
-            filter: blur(4px);
-        }
-        .avatar-img {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            border: 3px solid #1a1a24;
-            object-fit: cover;
-            background: #111;
-        }
+        html{ scroll-behavior:smooth; }
+        body{ font-family:"Noto Sans Bengali",sans-serif; background:var(--bg); color:var(--text); line-height:1.7; transition:.25s ease; }
+        a{ color:inherit; text-decoration:none; }
+        button, input{ font-family:inherit; } button{ cursor:pointer; }
 
-        /* হস্তলিখিত বাংলা সিগনেচারের স্টাইল */
-        .handwritten-signature {
-            font-family: 'Tiro Bangla', serif;
-            font-style: italic;
-            font-size: 22px;
-            font-weight: bold;
-            background: linear-gradient(135deg, #00f3ff, #b000ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-top: 8px;
-            margin-bottom: 15px;
-            text-shadow: 0 0 15px rgba(0, 243, 255, 0.2);
-            letter-spacing: 0.5px;
-            display: inline-block;
-            border-bottom: 1.5px dashed rgba(0, 243, 255, 0.4);
-            padding-bottom: 2px;
-        }
+        /* HEADER */
+        header{ position:sticky; top:0; z-index:1000; background:var(--header); backdrop-filter:blur(12px); border-bottom:1px solid var(--border); }
+        .header-inner{ width:min(1100px,calc(100% - 28px)); min-height:68px; margin:auto; display:flex; align-items:center; justify-content:space-between; }
+        .brand-mini{ display:flex; align-items:center; gap:11px; }
+        .brand-mini-mark{ width:39px; height:39px; border-radius:10px; display:grid; place-items:center; background:#f2f4f7; color:#111827; font-size:13px; font-weight:800; }
+        .brand-mini-text strong{ display:block; font-size:14px; line-height:1.2; }
+        .brand-mini-text span{ display:block; color:var(--muted); font-size:10px; margin-top:2px; }
+        .header-actions{ display:flex; align-items:center; gap:9px; }
+        .online-status{ display:flex; align-items:center; gap:7px; color:var(--muted); font-size:11px; }
+        .online-dot{ width:7px; height:7px; border-radius:50%; background:#16a34a; }
+        .menu-wrap{ position:relative; }
+        .menu-button{ width:40px; height:40px; border:1px solid var(--border); border-radius:10px; background:var(--surface); color:var(--text); display:grid; place-items:center; font-size:22px; }
+        .dropdown-menu{ position:absolute; top:calc(100% + 9px); right:0; width:290px; padding:7px; background:var(--surface); border:1px solid var(--border); border-radius:14px; box-shadow:var(--shadow); display:none; z-index:1100; }
+        .dropdown-menu.show{ display:block; }
+        .menu-title{ padding:9px 11px 7px; color:var(--muted); font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.7px; }
+        .menu-item{ width:100%; border:0; background:transparent; color:var(--text); display:flex; align-items:center; gap:11px; padding:11px; border-radius:9px; text-align:left; }
+        .menu-item:hover{ background:var(--surface2); }
+        .menu-item-icon{ width:31px; height:31px; border-radius:8px; background:var(--surface2); display:grid; place-items:center; font-size:15px; }
+        .menu-item-text strong{ display:block; font-size:12px; }
+        .menu-item-text span{ display:block; color:var(--muted); font-size:9px; }
 
-        .holder-name {
-            font-size: 21px;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 4px;
-            letter-spacing: 0.5px;
+        /* MAIN */
+        main{ width:min(1000px,calc(100% - 28px)); margin:28px auto 65px; }
+
+        /* PROFILE LAYOUT */
+        .fb-profile-container { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; overflow: hidden; box-shadow: var(--shadow); margin-bottom: 24px; }
+        .cover-banner { 
+            position: relative; width: 100%; height: 280px; 
+            background-image: url("https://i.ibb.co/xxm9h2z/1789833609938.png"); 
+            background-size: cover; background-position: center center; 
+            display: flex; align-items: center; justify-content: center; text-align: center;
         }
-        .holder-id {
-            font-size: 12px;
-            font-weight: 600;
-            color: var(--primary-glow);
-            margin-bottom: 15px;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
+        .cover-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(180deg, rgba(18,22,34,.3) 0%, rgba(18,22,34,.75) 100%);
+            display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px;
         }
-        .brand-title {
-            font-size: 20px;
-            font-weight: 800;
-            color: #fff;
-            margin-bottom: 4px;
-            letter-spacing: 0.5px;
+        .cover-badge{ display:inline-flex; align-items:center; gap:7px; padding:5px 12px; border:1px solid rgba(255,255,255,.25); border-radius:999px; background:rgba(255,255,255,.12); backdrop-filter:blur(8px); font-size:10px; font-weight:700; margin-bottom:8px; color:#fff; }
+        .cover-overlay h1{ font-size:clamp(24px, 4vw, 36px); font-weight:800; color:#fff; text-shadow:0 2px 10px rgba(0,0,0,0.5); }
+        .cover-overlay p{ font-size:12px; color:#e2e8f0; margin-top:4px; text-shadow:0 1px 5px rgba(0,0,0,0.5); }
+
+        .profile-details-section { position: relative; padding: 0 24px 24px 24px; text-align: center; }
+        .fb-avatar-wrapper {
+            position: relative; width: 130px; height: 130px; margin: -65px auto 12px auto;
+            border-radius: 50%; border: 4px solid var(--surface); box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            overflow: hidden; background: var(--surface2); z-index: 3;
         }
-        .brand-subtitle {
-            color: #a0a0b0;
-            font-size: 12.5px;
-            font-weight: 500;
-            margin-bottom: 22px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .specs-box {
-            background: rgba(15, 15, 22, 0.6);
-            border-radius: 16px;
-            padding: 18px;
-            margin-bottom: 20px;
-            text-align: left;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-left: 4px solid var(--primary-glow);
-        }
-        .specs-box h3 {
-            font-size: 12.5px;
-            color: var(--primary-glow);
-            margin-bottom: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-        .specs-list {
-            list-style-type: none;
-            font-size: 12px;
-            color: #c0c0d0;
-            line-height: 1.8;
-        }
-        .specs-list li strong {
-            color: #ffffff;
-        }
-        .specs-list li {
-            position: relative;
-            padding-left: 14px;
-            margin-bottom: 4px;
-        }
-        .specs-list li::before {
-            content: "▪";
-            position: absolute;
-            left: 0;
-            color: var(--secondary-glow);
-        }
-        .action-links {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin-bottom: 22px;
-        }
-        .nav-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            background: linear-gradient(135deg, #00f3ff, #0066ff);
-            color: white;
-            padding: 13px;
-            border-radius: 14px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 13.5px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 4px 15px rgba(0, 243, 255, 0.2);
-        }
-        .nav-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 243, 255, 0.35);
-            opacity: 0.95;
-        }
-        .nav-btn.youtube {
-            background: linear-gradient(135deg, #ff0033, #cc0000);
-            box-shadow: 0 4px 15px rgba(255, 0, 51, 0.25);
-        }
-        .nav-btn.facebook {
-            background: linear-gradient(135deg, #0088ff, #0044cc);
-            box-shadow: 0 4px 15px rgba(0, 136, 255, 0.25);
-        }
-        .nav-btn.hotline {
-            background: linear-gradient(135deg, #00b09b, #96c93d);
-            box-shadow: 0 4px 15px rgba(0, 176, 155, 0.25);
-        }
-        .disclaimer-box {
-            font-size: 10px;
-            color: #8a8a9a;
-            background: rgba(10, 10, 14, 0.8);
-            padding: 14px;
-            border-radius: 12px;
-            border: 1px dashed rgba(255, 255, 255, 0.1);
-            line-height: 1.5;
-            margin-bottom: 18px;
-            text-align: justify;
-        }
-        .disclaimer-box strong {
-            color: #d0d0e0;
-        }
-        .system-footer {
-            font-size: 10.5px;
-            color: #555566;
-            letter-spacing: 1px;
-            font-weight: 600;
-            text-transform: uppercase;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            padding-top: 12px;
+        .fb-avatar-wrapper img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .profile-name-row { display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap; }
+        .profile-name-row h2 { font-size: 24px; font-weight: 800; color: var(--text); }
+        .verified-badge-icon { background: #16a34a; color: #fff; width: 18px; height: 18px; border-radius: 50%; display: inline-grid; place-items: center; font-size: 10px; font-weight: bold; }
+        .profile-bio { color: var(--muted); font-size: 12px; margin-top: 4px; }
+        .profile-id-badge { display: inline-flex; align-items: center; gap: 6px; margin-top: 12px; padding: 5px 12px; background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; font-size: 11px; color: var(--muted); }
+        .profile-id-badge strong { color: var(--text); }
+
+        /* SECTIONS */
+        .section{ margin-top:24px; scroll-margin-top:90px; }
+        .section-heading{ margin-bottom:12px; padding-left:3px; }
+        .section-heading h2{ color:var(--text); font-size:18px; }
+        .section-heading p{ color:var(--muted); font-size:11px; }
+
+        /* INFORMATION */
+        .info-card{ background:var(--surface); border:1px solid var(--border); border-radius:16px; overflow:hidden; box-shadow:var(--shadow); }
+        .info-row{ display:grid; grid-template-columns:190px 1fr; gap:20px; padding:14px 19px; border-bottom:1px solid var(--border); }
+        .info-row:last-child{ border-bottom:0; }
+        .info-label{ color:var(--muted); font-size:11px; font-weight:600; }
+        .info-value{ color:var(--text2); font-size:12px; font-weight:600; }
+
+        /* OFFICIAL CONNECTIONS */
+        .links-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:13px; }
+        .official-link{ position:relative; min-height:116px; padding:19px; border-radius:15px; color:#fff; overflow:hidden; transition:.2s ease; display:flex; flex-direction:column; justify-content:space-between; }
+        .official-link:hover{ transform:translateY(-2px); box-shadow:0 12px 24px rgba(0,0,0,.3); }
+        .youtube{ background:#c8102e; } .facebook{ background:#1877f2; } .hotline{ background:#087443; }
+        .link-icon-box{ position:absolute; right:15px; top:13px; width:43px; height:43px; border-radius:11px; background:rgba(255,255,255,.15); display:grid; place-items:center; font-size:20px; }
+        .official-link small{ display:block; font-size:9px; opacity:.80; letter-spacing:.7px; margin-bottom:3px; }
+        .official-link strong{ display:block; font-size:15px; margin-bottom:2px; }
+        .official-link span{ font-size:10px; opacity:.87; }
+
+        /* LEGAL & DISCLAIMER CARDS */
+        .legal-card{ background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:22px; box-shadow:var(--shadow); margin-bottom:15px; }
+        .legal-card h3{ font-size:15px; color:var(--text); margin-bottom:10px; display:flex; align-items:center; gap:8px; }
+        .legal-card p{ color:var(--muted); font-size:12px; margin-bottom:12px; text-align:justify; }
+        .legal-card ul{ margin-left:18px; color:var(--muted); font-size:12px; margin-bottom:12px; }
+        .legal-card li{ margin-bottom:6px; }
+
+        /* DOS AND DONTS GRID */
+        .rules-grid{ display:grid; grid-template-columns:1fr 1fr; gap:15px; }
+        .rule-box{ background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:20px; box-shadow:var(--shadow); }
+        .rule-box.allowed{ border-top:4px solid #16a34a; }
+        .rule-box.forbidden{ border-top:4px solid #dc2626; }
+        .rule-box h3{ font-size:14px; margin-bottom:10px; display:flex; align-items:center; gap:8px; color:var(--text); }
+        .rule-box ul{ margin-left:16px; color:var(--muted); font-size:11.5px; }
+        .rule-box li{ margin-bottom:6px; text-align:justify; }
+
+        /* FRAUD WARNING */
+        .fraud-warning{ background:var(--surface); border:1px solid var(--warning-border); border-radius:18px; overflow:hidden; box-shadow:0 10px 28px rgba(180,83,9,.08); }
+        .fraud-head{ background:var(--warning-bg); padding:17px 19px; border-bottom:1px solid var(--warning-border); display:flex; align-items:center; gap:11px; }
+        .fraud-symbol{ width:40px; height:40px; border-radius:11px; background:#f59e0b; color:#fff; display:grid; place-items:center; font-size:20px; font-weight:800; }
+        .fraud-head h2{ color:#f7d58b; font-size:16px; } .fraud-head p{ color:#d6a954; font-size:10px; }
+        .fraud-body{ padding:20px; } .fraud-main{ color:var(--text); font-size:14px; font-weight:800; margin-bottom:9px; }
+        .fraud-body p{ color:var(--muted); font-size:12px; margin-bottom:9px; text-align:justify; }
+
+        /* EMPLOYEE DIRECTORY */
+        .employee-toolbar{ background:var(--surface); border:1px solid var(--border); border-radius:15px; padding:12px; display:flex; align-items:center; gap:10px; margin-bottom:13px; }
+        .employee-search{ flex:1; min-width:0; height:42px; border:1px solid var(--border); border-radius:9px; background:var(--surface2); color:var(--text); padding:0 13px; outline:none; font-size:12px; }
+        .employee-count{ white-space:nowrap; color:var(--muted); font-size:10px; }
+        .employee-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:13px; }
+        .employee-card{ background:var(--surface); border:1px solid var(--border); border-radius:15px; padding:17px; box-shadow:0 7px 22px rgba(0,0,0,.15); }
+        .employee-top{ display:flex; align-items:center; gap:12px; }
+        .employee-photo{ width:57px; height:57px; flex:0 0 auto; border-radius:13px; object-fit:cover; border:1px solid var(--border); background:var(--surface2); }
+        .employee-name{ color:var(--text); font-size:14px; font-weight:800; line-height:1.35; }
+        .employee-role{ color:var(--muted); font-size:10px; margin-top:2px; }
+        .employee-status{ display:inline-flex; align-items:center; gap:5px; margin-top:5px; color:#22c55e; font-size:9px; font-weight:700; }
+        .employee-status::before{ content:""; width:6px; height:6px; border-radius:50%; background:#22c55e; }
+        .employee-meta{ display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:14px; padding-top:13px; border-top:1px solid var(--border); }
+        .meta-item span{ display:block; color:var(--muted); font-size:9px; }
+        .meta-item strong{ display:block; color:var(--text2); font-size:10px; margin-top:1px; }
+        .details-button{ width:100%; height:35px; margin-top:13px; border:1px solid var(--border); border-radius:8px; background:var(--surface2); color:var(--text2); font-size:10px; font-weight:700; }
+        .details-button:hover{ background:var(--text); color:var(--surface); }
+        .no-results{ display:none; text-align:center; padding:25px; color:var(--muted); font-size:12px; background:var(--surface); border:1px solid var(--border); border-radius:14px; }
+
+        /* MODAL */
+        .modal-backdrop{ position:fixed; inset:0; z-index:3000; display:none; align-items:center; justify-content:center; padding:18px; background:rgba(0,0,0,.58); backdrop-filter:blur(4px); }
+        .modal-backdrop.show{ display:flex; }
+        .employee-modal{ width:min(500px,100%); max-height:90vh; overflow-y:auto; background:var(--surface); border:1px solid var(--border); border-radius:18px; box-shadow:0 25px 70px rgba(0,0,0,.5); }
+        .modal-header{ padding:17px 18px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--border); }
+        .modal-header strong{ color:var(--text); font-size:14px; }
+        .modal-close{ width:32px; height:32px; border:0; border-radius:8px; background:var(--surface2); color:var(--text); font-size:18px; }
+        .modal-body{ padding:20px; }
+        .modal-profile{ display:flex; align-items:center; gap:13px; padding-bottom:17px; border-bottom:1px solid var(--border); }
+        .modal-photo{ width:70px; height:70px; border-radius:15px; object-fit:cover; border:1px solid var(--border); }
+        .modal-profile h3{ color:var(--text); font-size:17px; } .modal-profile p{ color:var(--muted); font-size:10px; margin-top:2px; }
+        .detail-list{ margin-top:17px; display:grid; }
+        .detail-row{ display:grid; grid-template-columns:135px 1fr; gap:15px; padding:10px 0; border-bottom:1px solid var(--border); }
+        .detail-row:last-child{ border-bottom:0; }
+        .detail-row span{ color:var(--muted); font-size:10px; } .detail-row strong{ color:var(--text2); font-size:11px; }
+
+        footer{ margin-top:35px; text-align:center; color:var(--muted); font-size:10px; padding-bottom:20px; }
+
+        @media(max-width:720px){
+            .links-grid{ grid-template-columns:1fr; }
+            .employee-grid{ grid-template-columns:1fr; }
+            .rules-grid{ grid-template-columns:1fr; }
         }
     </style>
 </head>
 <body>
 
-    <div class="portal-wrapper">
-        <div class="verified-badge">Official Digital Credentials</div>
-        
-        <!-- পাসপোর্ট সাইজ ছবি -->
-        <div class="avatar-container">
-            <img src="https://i.ibb.co.com/4wL5YWYg/image.png" alt="MD. Romjan Chowdhury" class="avatar-img">
+    <!-- HEADER -->
+    <header>
+        <div class="header-inner">
+            <div class="brand-mini">
+                <div class="brand-mini-mark">RSK</div>
+                <div class="brand-mini-text">
+                    <strong>DJ RSK Music BD</strong>
+                    <span>অফিশিয়াল ক্রিয়েটর পোর্টাল</span>
+                </div>
+            </div>
+            <div class="header-actions">
+                <div class="online-status">
+                    <span class="online-dot"></span>
+                    <span>সক্রিয়</span>
+                </div>
+                <div class="menu-wrap">
+                    <button class="menu-button" id="menuButton" aria-label="মেনু খুলুন" aria-expanded="false">⋮</button>
+                    <div class="dropdown-menu" id="dropdownMenu">
+                        <div class="menu-title">পোর্টাল মেনু</div>
+                        <button class="menu-item" onclick="goToSection('legalSection')">
+                            <div class="menu-item-icon">⚖</div>
+                            <div class="menu-item-text">
+                                <strong>আইনি ও কর্মী সুরক্ষা ডিসক্লেমার</strong>
+                                <span>আইনি ও কর্মী সুরক্ষা সংক্রান্ত নোটিশ</span>
+                            </div>
+                        </button>
+                        <button class="menu-item" onclick="goToSection('idCardSection')">
+                            <div class="menu-item-icon">🪪</div>
+                            <div class="menu-item-text">
+                                <strong>আইডি কার্ড ও কিউআর যাচাই গাইড</strong>
+                                <span>কর্মী আইডি ও কিউআর কোড যাচাইকরণ</span>
+                            </div>
+                        </button>
+                        <button class="menu-item" onclick="goToSection('shootingProtocolSection')">
+                            <div class="menu-item-icon">🎬</div>
+                            <div class="menu-item-text">
+                                <strong>মাঠপর্যায়ে শুটিং ও ওয়ার্ক অর্ডার প্রটোকল</strong>
+                                <span>শুটিং ও লোকেশন পরিচালনার নিয়মাবলি</span>
+                            </div>
+                        </button>
+                        <button class="menu-item" onclick="goToSection('rulesSection')">
+                            <div class="menu-item-icon">📋</div>
+                            <div class="menu-item-text">
+                                <strong>করণীয় ও বর্জনীয় নীতিমালা</strong>
+                                <span>কী করা যাবে এবং কী করা যাবে না</span>
+                            </div>
+                        </button>
+                        <button class="menu-item" onclick="openEmployees()">
+                            <div class="menu-item-icon">👥</div>
+                            <div class="menu-item-text">
+                                <strong>কর্মীদের তালিকা (Directory)</strong>
+                                <span>কর্মীদের অফিসিয়াল তালিকা ও প্রোফাইল</span>
+                            </div>
+                        </button>
+                        <button class="menu-item" onclick="goToSection('fraudSection')">
+                            <div class="menu-item-icon">⚠</div>
+                            <div class="menu-item-text">
+                                <strong>নিরাপত্তা ও সতর্কতা নোটিশ</strong>
+                                <span>প্রতারণা ও অর্থ তছরুপ রোধে সতর্কতা</span>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTAINER -->
+    <main>
+        <!-- PROFILE LAYOUT -->
+        <div class="fb-profile-container">
+            <div class="cover-banner">
+                <div class="cover-overlay">
+                    <div class="cover-badge">✓ অফিশিয়াল ক্রিয়েটর ব্র্যান্ড</div>
+                    <h1>DJ RSK Music BD</h1>
+                    <p>মিউজিক রিমিক্স • অডিও প্রোডাকশন • ডিজিটাল মিডিয়া • সম্প্রচার</p>
+                </div>
+            </div>
+
+            <div class="profile-details-section">
+                <div class="fb-avatar-wrapper">
+                    <img src="https://i.ibb.co.com/4wL5YWYg/image.png" alt="MD. ROMJAN CHOWDHURY">
+                </div>
+                <div class="profile-name-row">
+                    <h2>MD. ROMJAN CHOWDHURY</h2>
+                    <span class="verified-badge-icon">✓</span>
+                </div>
+                <div class="profile-bio">অফিশিয়াল মিউজিক রিমিক্স ও ব্রডকাস্টিং নেটওয়ার্ক</div>
+                <div class="profile-id-badge">
+                    সিকিউর আইডি: <strong>RSK-2026-001</strong>
+                </div>
+            </div>
         </div>
 
-        <!-- হস্তলিখিত বাংলা সিগনেচার -->
-        <div>
-            <span class="handwritten-signature">~ মোঃ রমজান চৌধুরী ~</span>
-        </div>
-        
-        <!-- কার্ড অনুযায়ী নাম ও আইডি -->
-        <div class="holder-name">MD. ROMJAN CHOWDHURY</div>
-        <div class="holder-id">SECURE ID: RSK-2026-001</div>
+        <!-- INFORMATION SECTION -->
+        <section class="section">
+            <div class="section-heading">
+                <h2>ক্রিয়েটর তথ্য</h2>
+                <p>অফিশিয়াল পরিচয় এবং প্রাতিষ্ঠানিক বিবরণ</p>
+            </div>
+            <div class="info-card">
+                <div class="info-row"><div class="info-label">ব্র্যান্ড</div><div class="info-value">DJ RSK MUSIC BD</div></div>
+                <div class="info-row"><div class="info-label">প্রতিষ্ঠান</div><div class="info-value">আরএসকে মিউজিক বিডি (RSK Music BD)</div></div>
+                <div class="info-row"><div class="info-label">মূল চ্যানেল</div><div class="info-value">ডিজে আরএসকে মিউজিক বিডি (DJ RSK Music BD)</div></div>
+                <div class="info-row"><div class="info-label">আইনি স্বত্বাধিকারী</div><div class="info-value">মোঃ রমজান চৌধুরী (Md. Romjan Chowdhury)</div></div>
+                <div class="info-row"><div class="info-label">অবস্থান</div><div class="info-value">শ্রীপুর, মাগুরা, খুলনা বিভাগ, বাংলাদেশ</div></div>
+            </div>
+        </section>
 
-        <!-- ব্র্যান্ড ও চ্যানেল নাম -->
-        <div class="brand-title">DJ RSK MUSIC BD</div>
-        <div class="brand-subtitle">Official Music Remix & Broadcasting Network</div>
-        
-        <!-- সুনির্দিষ্ট প্রাতিষ্ঠানিক ও আইনি তথ্যাবলি -->
-        <div class="specs-box">
-            <h3>⚙️ Operational & Legal Metadata</h3>
-            <ul class="specs-list">
-                <li><strong>Enterprise Name:</strong> আরএসকে মিউজিক বিডি (RSK Music BD)</li>
-                <li><strong>Core Channel:</strong> ডিজে আরএসকে মিউজিক বিডি (DJ RSK Music BD)</li>
-                <li><strong>Legal Proprietor:</strong> মোঃ রমজান চৌধুরী (Md. Romjan Chowdhury)</li>
-                <li><strong>Domain of Operation:</strong> Audio Production, Remixing & Live Streaming</li>
-                <li><strong>Geographic Location:</strong> Sreepur, Magura, Khulna Division, Bangladesh</li>
-                <li><strong>Official Enterprise Hotline:</strong> +880 9658-646570</li>
-            </ul>
-        </div>
-        
-        <!-- অফিশিয়াল লিংকসমূহ -->
-        <div class="action-links">
-            <a href="https://youtube.com/@djrskmusicbd?si=EWQYn8gY1-_P9h6T" target="_blank" class="nav-btn youtube">
-                🔴 Connect on YouTube (DJ RSK Music BD)
-            </a>
-            <a href="https://www.facebook.com/share/19UVsP5jmN/" target="_blank" class="nav-btn facebook">
-                🔵 Official Facebook Network & Page
-            </a>
-            <a href="tel:+8809658646570" class="nav-btn hotline">
-                📞 Direct Secure Hotline: +880 9658-646570
-            </a>
-        </div>
+        <!-- OFFICIAL CONNECTIONS -->
+        <section class="section">
+            <div class="section-heading">
+                <h2>অফিশিয়াল যোগাযোগ মাধ্যম</h2>
+                <p>শুধুমাত্র এই অফিসিয়াল মাধ্যমগুলো এবং হটলাইনের মাধ্যমে যোগাযোগ করুন</p>
+            </div>
+            <div class="links-grid">
+                <a class="official-link youtube" href="https://youtube.com/@djrskmusicbd?si=EWQYn8gY1-_P9h6T" target="_blank" rel="noopener noreferrer">
+                    <div class="link-icon-box">▶</div>
+                    <div>
+                        <small>অফিশিয়াল ইউটিউব</small>
+                        <strong>YouTube</strong>
+                        <span>DJ RSK Music BD</span>
+                    </div>
+                </a>
+                <a class="official-link facebook" href="https://www.facebook.com/share/19UVsP5jmN/" target="_blank" rel="noopener noreferrer">
+                    <div class="link-icon-box">f</div>
+                    <div>
+                        <small>অফিশিয়াল ফেসবুক</small>
+                        <strong>Facebook</strong>
+                        <span>DJ RSK Music BD</span>
+                    </div>
+                </a>
+                <a class="official-link hotline" href="tel:+8809658646570">
+                    <div class="link-icon-box">📞</div>
+                    <div>
+                        <small>অফিশিয়াল হটলাইন</small>
+                        <strong>+880 9658-646570</strong>
+                        <span>২৪/৭ অফিসিয়াল হটলাইন</span>
+                    </div>
+                </a>
+            </div>
+        </section>
 
-        <!-- সর্বোচ্চ আইনি সুরক্ষা ও কমপ্লায়েন্স ডিসক্লেইমার -->
-        <div class="disclaimer-box">
-            <strong>COMPLIANCE & LEGAL DISCLAIMER:</strong> This cryptographic digital verification portal and identification pass belong exclusively to <b>RSK Music BD</b> and its principal brand <b>DJ RSK Music BD</b>, governed under the direct independent sole proprietorship of <b>Md. Romjan Chowdhury</b>, stationed at Sreepur, Magura, Bangladesh. This interface serves strictly as an authenticated digital credential for creator identification, brand authority validation, and authorized media streaming administration. <b>NOTICE:</b> This entity and its credentials are <b>NOT</b> affiliated with, endorsed by, or operating as any news agency, press syndicate, television broadcast network, or government journalism organization. All intellectual properties, audio assets, digital branding elements, and system architectures are legally protected under international copyright frameworks. Unauthorized duplication, fraudulent impersonation, or misuse of this digital pass will invite strict legal repercussions under applicable cyber and intellectual property laws.
-        </div>
+        <!-- PERMANENT LEGAL & EMPLOYEE DISCLAIMER -->
+        <section class="section" id="legalSection">
+            <div class="section-heading">
+                <h2>স্থায়ী আইনি ও কর্মী সুরক্ষা ডিসক্লেমার</h2>
+                <p>আইনি জটিলতা ও কর্মী সুরক্ষা বিষয়ক স্থায়ী ঘোষণা</p>
+            </div>
+            <div class="legal-card">
+                <h3>⚖ কর্মী সুরক্ষা ও আইনি প্রটোকল</h3>
+                <p>আমাদের যেকোনো অনুমোদিত কর্মী বা প্রতিনিধির বিরুদ্ধে যদি কখনো কোনো ভিত্তিহীন বা বিনা কারণে গ্রেফতারি পরোয়ানা জারি করা হয় কিংবা আইনগত হয়রানির চেষ্টা করা হয়, তবে তাৎক্ষণিকভাবে উপযুক্ত প্রমাণ ও সাক্ষ্য-প্রমাণসহ সংশ্লিষ্ট টিভি চ্যানেল ও নেটওয়ার্কের চ্যানেল কর্তৃপক্ষকে অফিসিয়াল হটলাইনে অবগত করতে হবে।</p>
+                <p>যাচাই-বাছাই শেষে চ্যানেল কর্তৃপক্ষ উপযুক্ত ও বৈধ প্রমাণ পেলে তাৎক্ষণিকভাবে আইনগত ব্যবস্থা গ্রহণ করবে। তবে প্রমাণ ব্যতিরেকে বা আইনগত প্রক্রিয়া ছাড়া কোনো কর্মীর গায়ে হাত তোলা, শারীরিক নিগ্রহ করা বা মানহানিকর কিছু বলা সম্পূর্ণ নিষিদ্ধ ও দণ্ডনীয় অপরাধ বলে গণ্য হবে। এ ধরনের বেআইনি কর্মকাণ্ডের তীব্র নিন্দা ও আইনি প্রতিরোধ জানানো হবে।</p>
+            </div>
+        </section>
 
-        <div class="system-footer">
-            SECURE ENCRYPTED GATEWAY • AUTH ID: RSK-2026-001
+        <!-- ID CARD & QR CODE VERIFICATION DISCLAIMER -->
+        <section class="section" id="idCardSection">
+            <div class="legal-card">
+                <h3>🪪 কর্মী ক্রিয়েটর কার্ড ও পরিচয় যাচাইকরণ নীতিমালা</h3>
+                <p>আমাদের প্রতিষ্ঠানের সকল কর্মী ও ক্রিয়েটরদের সুনির্দিষ্ট অফিশিয়াল **ক্রিয়েটর আইডি কার্ড (Creator ID Card)** প্রদান করা হয়, যা তাদের সঠিক পরিচয় নিশ্চিত করতে সর্বদা বহন করা বাধ্যতামূলক।</p>
+                <ul>
+                    <li><strong>পরিচয় নিশ্চিতকরণ ও হয়রানি রোধ:</strong> এই আইডি কার্ড দেওয়ার মূল উদ্দেশ্য হলো আমাদের কর্মীরা যাতে মাঠে-ঘাটে বা পেশাগত দায়িত্ব পালনকালে কোনো ধরনের অপ্রীতিকর পরিস্থিতি বা হয়রানির শিকার না হন।</li>
+                    <li><strong>QR Code স্ক্যানিং:</strong> কার্ডে প্রদত্ত কিউআর কোড (QR Code) যেকোনো স্মার্টফোন দিয়ে স্ক্যান করার সাথে সাথেই আমাদের সেন্ট্রাল ডাটাবেজ থেকে উক্ত কর্মীর সমস্ত অফিশিয়াল তথ্য, বর্তমান ওয়ার্ক অর্ডার ও স্ট্যাটাস প্রদর্শিত হবে।</li>
+                    <li><strong>ফেস ও পাসওয়ার্ড মেলবন্ধন:</strong> স্ক্যান করার পর প্রাপ্ত তথ্যের সাথে কর্মীর অফিশিয়াল ছবি (Face) এবং কার্ডে থাকা সিকিউরড আইডি নম্বর বা পাসওয়ার্ড ভালোভাবে মিলিয়ে নিতে হবে। সঠিক যাচাই ছাড়া কাউকে সন্দেহ করা বা হেনস্তা করা সম্পূর্ণ নিষিদ্ধ।</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- FIELD SHOOTING & WORK ORDER PROTOCOL (NEWLY ADDED) -->
+        <section class="section" id="shootingProtocolSection">
+            <div class="legal-card">
+                <h3>🎬 মাঠপর্যায়ে শুটিং, ওয়ার্ক অর্ডার ও লোকেশন প্রটোকল</h3>
+                <p>আমাদের রিমিক্স চ্যানেল ও ভিডিও প্রোডাকশন টিম যখন মাঠপর্যায়ে বা বিভিন্ন লোকেশনে শুটিং বা কন্টেন্ট তৈরির কাজ পরিচালনা করেন, তখন নিচের প্রটোকলগুলো কঠোরভাবে মেনে চলা হয়:</p>
+                <ul>
+                    <li><strong>ডিজিটাল ওয়ার্ক অর্ডার (Digital Work Order):</strong> মাঠে কর্মরত প্রতিটি কর্মীর একটি সক্রিয় কাজের আদেশ বা ওয়ার্ক অর্ডার ডাটাবেজে যুক্ত থাকে, যেখানে নির্দিষ্ট প্রজেক্টের নাম, শুটিংয়ের লোকেশন এবং অনুমোদনের মেয়াদ উল্লেখ থাকে।</li>
+                    <li><strong>জরুরি যোগাযোগ ও ইমার্জেন্সি ব্যাকআপ (Emergency Info):</strong> ফিল্ডে কোনো জরুরি পরিস্থিতি মোকাবেলা করার জন্য সেন্ট্রাল হটলাইন এবং টিম লিডারদের সাথে তাৎক্ষণিক যোগাযোগের ব্যবস্থা রাখা বাধ্যতামূলক।</li>
+                    <li><strong>স্থানীয় পরিবেশ ও গোপনীয়তা রক্ষা:</strong> শুটিং চলাকালীন স্থানীয় সাধারণ মানুষের গোপনীয়তা বজায় রাখা এবং সরকারি বা সংরক্ষিত সংবেদনশীল এলাকায় অনুমতি ব্যতীত ড্রোন বা ক্যামেরা ব্যবহার করা থেকে বিরত থাকা।</li>
+                    <li><strong>স্থানীয় প্রশাসন ও জনরোষ প্রতিরোধ:</strong> কোনো এলাকায় শুটিং চলাকালে ভুল বোঝাবুঝি এড়াতে এই অফিসিয়াল পোর্টাল ও কিউআর কোড দেখিয়ে তাৎক্ষণিকভাবে অফিশিয়াল পরিচয় নিশ্চিত করা হয়। ভিত্তিহীনভাবে বাধা সৃষ্টি বা হয়রানি করা হলে আইনগত ব্যবস্থা নেওয়া হবে।</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- DOS AND DONTS POLICY -->
+        <section class="section" id="rulesSection">
+            <div class="section-heading">
+                <h2>চ্যানেলের করণীয় ও বর্জনীয় নীতিমালা (Do's and Don'ts)</h2>
+                <p>আমাদের চ্যানেল ও প্রাতিষ্ঠানিক কার্যক্রম পরিচালনার সুনির্দিষ্ট নিয়মাবলি</p>
+            </div>
+            <div class="rules-grid">
+                <div class="rule-box allowed">
+                    <h3>✅ কী কী করা যাবে (করণীয়)</h3>
+                    <ul>
+                        <li>পেশাগত দায়িত্ব পালনের সময় অফিশিয়াল আইডি কার্ড দৃশ্যমান রাখা এবং যাচাইয়ের জন্য কিউআর কোড স্ক্যান করতে দেওয়া।</li>
+                        <li>যেকোনো প্রাতিষ্ঠানিক কাজের ক্ষেত্রে সংশ্লিষ্ট কর্তৃপক্ষের পূর্বানুমতি সাপেক্ষে নির্দিষ্ট জোন বা লোকেশনে প্রবেশ করা।</li>
+                        <li>সাংগঠনিক ও সম্প্রচার সংক্রান্ত প্রয়োজনে সরাসরি অফিশিয়াল হটলাইনে বা মাধ্যমে যোগাযোগ করা।</li>
+                        <li>সম্পূর্ণ সততা, পেশাদারিত্ব ও নিয়মের সাথে চ্যানেল এবং প্রতিষ্ঠানের নীতি মেনে মিডিয়া কার্যক্রম পরিচালনা করা।</li>
+                    </ul>
+                </div>
+                <div class="rule-box forbidden">
+                    <h3>❌ কী কী করা যাবে না (বর্জনীয়)</h3>
+                    <ul>
+                        <li><strong>অনুমতি ছাড়া প্রবেশ নিষেধ:</strong> চ্যানেল কর্তৃপক্ষের সুনির্দিষ্ট অনুমতি বা পাস ছাড়া কোনো সংরক্ষিত বা ব্যক্তিগত জোনে প্রবেশ করা যাবে না।</li>
+                        <li>অনুমতি নেওয়ার নিয়ম: অনুমতি গ্রহণের জন্য অবশ্যই অফিশিয়াল হটলাইন বা নির্ধারিত অ্যাডমিন মাধ্যমের শরণাপন্ন হতে হবে; বিনা অনুমতিতে কোনো কার্যক্রম পরিচালনা করা কঠোরভাবে নিষিদ্ধ।</li>
+                        <li>চ্যানেল বা প্রতিষ্ঠাতার নাম ব্যবহার করে কারো কাছে টাকা চাওয়া বা আর্থিক লেনদেন করা যাবে না (আমাদের চ্যানেল কোনো প্রকার টাকা নেয় না)।</li>
+                        <li>যাচাই-বাছাই না করে বা উপযুক্ত প্রমাণ ছাড়া কোনো কর্মীকে হয়রানি করা, মিথ্যা অপবাদ দেওয়া কিংবা গায়ে হাত তোলা সম্পূর্ণ নিষেধ।</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- TERMS OF SERVICE & FINANCIAL DISCLAIMER -->
+        <section class="section" id="tosSection">
+            <div class="section-heading">
+                <h2>পরিষেবার শর্তাবলি ও প্রতারণা বিরোধী নীতি</h2>
+                <p>পরিষেবার শর্তাবলি এবং অর্থ লেনদেন সংক্রান্ত কঠোর নিষেধাজ্ঞা</p>
+            </div>
+            <div class="legal-card">
+                <h3>📄 Terms of Service (শর্তাবলি ও নীতিমালা)</h3>
+                <ul>
+                    <li><strong>পরিচয় ও ব্র্যান্ড সুরক্ষা:</strong> ডিজে আরএসকে মিউজিক বিডি (DJ RSK Music BD) এবং এর কর্ণধার মোঃ রমজান চৌধুরীর নাম, লোগো বা ব্র্যান্ড পরিচয় ব্যবহার করে কোনো ব্যক্তি বা গোষ্ঠী ব্যক্তিগত স্বার্থ হাসিল বা প্রতারণা করতে পারবে না।</li>
+                    <li><strong>আর্থিক লেনদেন নিষেধাজ্ঞা (Zero Fund Policy):</strong> আমাদের এই চ্যানেল বা প্ল্যাটফর্ম থেকে কখনো কোনো সেবা বা কাজের জন্য কারো কাছে নগদ টাকা বা আর্থিক অনুদান চাওয়া হয় না। প্রতিষ্ঠাতা বা চ্যানেল কর্তৃপক্ষ কখনো কারো কাছে টাকা নেন না।</li>
+                    <li><strong>প্রতারণা প্রতিরোধ:</strong> আমাদের নাম বা পদবি ভাঙিয়ে কেউ যদি আর্থিক লেনদেন বা টাকা তছরুপ করার চেষ্টা করে, তবে তার জন্য চ্যানেল কর্তৃপক্ষ কোনোভাবেই দায়ী থাকবে না। এ বিষয়ে প্রশাসনকে আইনগত ব্যবস্থা নেওয়ার অনুরোধ জানানো হলো।</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- EMPLOYEE DIRECTORY -->
+        <section class="section" id="employeeDirectory">
+            <div class="section-heading">
+                <h2>কর্মীদের অফিসিয়াল তালিকা (Employee Directory)</h2>
+                <p>Official employee and team information</p>
+            </div>
+            <div class="employee-toolbar">
+                <input type="search" id="employeeSearch" class="employee-search" placeholder="কর্মীর নাম, ID, পদ বা বিভাগ দিয়ে খুঁজুন..." oninput="searchEmployees()">
+                <div class="employee-count" id="employeeCount">0 জন</div>
+            </div>
+            <div class="employee-grid" id="employeeGrid"></div>
+            <div class="no-results" id="noResults">কোনো কর্মীর তথ্য পাওয়া যায়নি।</div>
+        </section>
+
+        <!-- SECURITY & FRAUD WARNING -->
+        <section class="section" id="fraudSection">
+            <div class="fraud-warning">
+                <div class="fraud-head">
+                    <div class="fraud-symbol">!</div>
+                    <div>
+                        <h2>আর্থিক প্রতারণা ও স্ক্যাম প্রতিরোধ নোটিশ</h2>
+                        <p>টাকা পাঠানোর আগে অবশ্যই পরিচয় ও যোগাযোগের তথ্য যাচাই করুন।</p>
+                    </div>
+                </div>
+                <div class="fraud-body">
+                    <div class="fraud-main">সতর্ক থাকুন: কেউ টাকা চাইলে লেনদেন করবেন না।</div>
+                    <p>DJ RSK Music BD বা এর সাথে জড়িত কেউ কখনো অপ্রত্যাশিতভাবে বিকাশ, নগদ বা ব্যাংক অ্যাকাউন্টে টাকা দাবি করে না। আমাদের নাম ভাঙিয়ে কেউ অর্থ দাবি করলে হটলাইনে যোগাযোগ করুন এবং ওটিপি (OTP) বা পাসওয়ার্ড কাউকে দেবেন না।</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-brand" style="color:var(--text); font-weight:700;">DJ RSK Music BD</div>
+        <p>AUTH ID: RSK-2026-001 | Legal & Security Disclaimer Enforced</p>
+        <p>© 2026 DJ RSK Music BD. সর্বস্বত্ব সংরক্ষিত।</p>
+    </footer>
+
+    <!-- EMPLOYEE DETAILS MODAL -->
+    <div class="modal-backdrop" id="employeeModal" onclick="closeModalOutside(event)">
+        <div class="employee-modal">
+            <div class="modal-header">
+                <strong>কর্মীর বিস্তারিত বিবরণ</strong>
+                <button class="modal-close" onclick="closeEmployeeModal()">×</button>
+            </div>
+            <div class="modal-body" id="employeeModalBody"></div>
         </div>
     </div>
 
+    <!-- JAVASCRIPT -->
+    <script>
+        const employees = [
+            { id:"RSK-EMP-001", name:"Employee Name 01", role:"Music & Media Executive", department:"Media & Production", joining:"2026", location:"Sreepur, Magura", status:"Active", photo:"https://i.ibb.co.com/4wL5YWYg/image.png", responsibility: "Music production, media coordination and broadcasting support.", workOrder: "WO-2026-089 (Active Field Shoot)" },
+            { id:"RSK-EMP-002", name:"Employee Name 02", role:"Content & Creative Executive", department:"Creative Department", joining:"2026", location:"Magura, Bangladesh", status:"Active", photo:"https://i.ibb.co.com/4wL5YWYg/image.png", responsibility: "Creative content planning, design coordination and digital content management.", workOrder: "WO-2026-090 (Studio & Location Media)" },
+            { id:"RSK-EMP-003", name:"Employee Name 03", role:"Broadcasting Assistant", department:"Broadcasting", joining:"2026", location:"Sreepur, Magura", status:"Active", photo:"https://i.ibb.co.com/4wL5YWYg/image.png", responsibility: "Broadcasting support, scheduling and technical coordination.", workOrder: "WO-2026-091 (Live Stream Support)" },
+            { id:"RSK-EMP-004", name:"Employee Name 04", role:"Digital Media Assistant", department:"Digital Media", joining:"2026", location:"Magura, Bangladesh", status:"Active", photo:"https://i.ibb.co.com/4wL5YWYg/image.png", responsibility: "Digital platform management and online media support.", workOrder: "WO-2026-092 (Digital Operations)" }
+        ];
+
+        // Menu Toggle
+        const menuButton = document.getElementById("menuButton");
+        const dropdownMenu = document.getElementById("dropdownMenu");
+
+        menuButton.addEventListener("click", function(event){
+            event.stopPropagation();
+            const isOpen = dropdownMenu.classList.toggle("show");
+            menuButton.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        });
+
+        document.addEventListener("click", function(event){
+            if(!dropdownMenu.contains(event.target) && event.target !== menuButton){
+                dropdownMenu.classList.remove("show");
+                menuButton.setAttribute("aria-expanded", "false");
+            }
+        });
+
+        // Employee Directory Rendering
+        function renderEmployees(list=employees){
+            const grid = document.getElementById("employeeGrid");
+            const count = document.getElementById("employeeCount");
+            const noResults = document.getElementById("noResults");
+            if(!grid) return;
+            grid.innerHTML="";
+            count.textContent = list.length + " জন";
+            if(list.length===0){
+                noResults.style.display="block";
+                return;
+            }
+            noResults.style.display="none";
+            list.forEach(function(employee, index){
+                const card = document.createElement("div");
+                card.className="employee-card";
+                card.innerHTML=`
+                    <div class="employee-top">
+                        <img class="employee-photo" src="${employee.photo}" alt="${escapeHTML(employee.name)}">
+                        <div>
+                            <div class="employee-name">${escapeHTML(employee.name)}</div>
+                            <div class="employee-role">${escapeHTML(employee.role)}</div>
+                            <div class="employee-status">${escapeHTML(employee.status)}</div>
+                        </div>
+                    </div>
+                    <div class="employee-meta">
+                        <div class="meta-item"><span>আইডি নম্বর</span><strong>${escapeHTML(employee.id)}</strong></div>
+                        <div class="meta-item"><span>বিভাগ</span><strong>${escapeHTML(employee.department)}</strong></div>
+                    </div>
+                    <button class="details-button" onclick="showEmployeeDetails(${index})">কর্মীর বিস্তারিত দেখুন</button>
+                `;
+                grid.appendChild(card);
+            });
+        }
+        renderEmployees();
+
+        function searchEmployees(){
+            const query = document.getElementById("employeeSearch").value.trim().toLowerCase();
+            if(!query){ renderEmployees(); return; }
+            const filtered = employees.filter(function(employee){
+                return (employee.name.toLowerCase().includes(query) || 
+                        employee.id.toLowerCase().includes(query) || 
+                        employee.role.toLowerCase().includes(query) || 
+                        employee.department.toLowerCase().includes(query) || 
+                        employee.location.toLowerCase().includes(query));
+            });
+            renderEmployees(filtered);
+        }
+
+        function showEmployeeDetails(index){
+            const employee = employees[index];
+            if(!employee) return;
+            const modal = document.getElementById("employeeModal");
+            const body = document.getElementById("employeeModalBody");
+            body.innerHTML=`
+                <div class="modal-profile">
+                    <img class="modal-photo" src="${employee.photo}" alt="${escapeHTML(employee.name)}">
+                    <div>
+                        <h3>${escapeHTML(employee.name)}</h3>
+                        <p>${escapeHTML(employee.role)}</p>
+                    </div>
+                </div>
+                <div class="detail-list">
+                    <div class="detail-row"><span>আইডি নম্বর</span><strong>${escapeHTML(employee.id)}</strong></div>
+                    <div class="detail-row"><span>পদবি</span><strong>${escapeHTML(employee.role)}</strong></div>
+                    <div class="detail-row"><span>বিভাগ</span><strong>${escapeHTML(employee.department)}</strong></div>
+                    <div class="detail-row"><span>ওয়ার্ক অর্ডার</span><strong>${escapeHTML(employee.workOrder)}</strong></div>
+                    <div class="detail-row"><span>যোগদান</span><strong>${escapeHTML(employee.joining)}</strong></div>
+                    <div class="detail-row"><span>অবস্থান</span><strong>${escapeHTML(employee.location)}</strong></div>
+                    <div class="detail-row"><span>স্ট্যাটাস</span><strong>${escapeHTML(employee.status)}</strong></div>
+                    <div class="detail-row"><span>দায়িত্ব</span><strong>${escapeHTML(employee.responsibility)}</strong></div>
+                </div>
+            `;
+            modal.classList.add("show");
+            document.body.style.overflow="hidden";
+        }
+
+        function closeEmployeeModal(){
+            document.getElementById("employeeModal").classList.remove("show");
+            document.body.style.overflow="";
+        }
+
+        function closeModalOutside(event){
+            if(event.target.id==="employeeModal"){ closeEmployeeModal(); }
+        }
+
+        function openEmployees(){
+            dropdownMenu.classList.remove("show");
+            document.getElementById("employeeDirectory").scrollIntoView({ behavior:"smooth", block:"start" });
+        }
+
+        function goToSection(id){
+            dropdownMenu.classList.remove("show");
+            const element = document.getElementById(id);
+            if(element){ element.scrollIntoView({ behavior:"smooth", block:"start" }); }
+        }
+
+        function escapeHTML(value){
+            return String(value).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#039;");
+        }
+
+        document.addEventListener("keydown", function(event){
+            if(event.key==="Escape"){
+                closeEmployeeModal();
+                dropdownMenu.classList.remove("show");
+            }
+        });
+    </script>
 </body>
 </html>
