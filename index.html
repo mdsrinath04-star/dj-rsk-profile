@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DJ RSK Music BD | Official Creator Portal</title>
+    <!-- হস্তলিখিত সিগনেচারের জন্য বাংলা ফন্ট যুক্ত করা হলো -->
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Bangla:ital@1&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-glow: #00f3ff;
@@ -101,6 +103,25 @@
             object-fit: cover;
             background: #111;
         }
+
+        /* হস্তলিখিত বাংলা সিগনেচারের স্টাইল */
+        .handwritten-signature {
+            font-family: 'Tiro Bangla', serif;
+            font-style: italic;
+            font-size: 22px;
+            font-weight: bold;
+            background: linear-gradient(135deg, #00f3ff, #b000ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-top: 8px;
+            margin-bottom: 15px;
+            text-shadow: 0 0 15px rgba(0, 243, 255, 0.2);
+            letter-spacing: 0.5px;
+            display: inline-block;
+            border-bottom: 1.5px dashed rgba(0, 243, 255, 0.4);
+            padding-bottom: 2px;
+        }
+
         .holder-name {
             font-size: 21px;
             font-weight: 700;
@@ -241,6 +262,11 @@
         <!-- পাসপোর্ট সাইজ ছবি -->
         <div class="avatar-container">
             <img src="https://i.ibb.co.com/4wL5YWYg/image.png" alt="MD. Romjan Chowdhury" class="avatar-img">
+        </div>
+
+        <!-- হস্তলিখিত বাংলা সিগনেচার -->
+        <div>
+            <span class="handwritten-signature">~ মোঃ রমজান চৌধুরী ~</span>
         </div>
         
         <!-- কার্ড অনুযায়ী নাম ও আইডি -->
