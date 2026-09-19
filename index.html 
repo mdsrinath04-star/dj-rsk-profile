@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DJ RSK Music BD | Official Creator Portal</title>
+    <style>
+        :root {
+            --primary-glow: #00f3ff;
+            --secondary-glow: #b000ff;
+            --bg-deep: #050508;
+            --card-bg: rgba(24, 24, 32, 0.75);
+            --border-color: rgba(0, 243, 255, 0.25);
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+        body {
+            background-color: var(--bg-deep);
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(0, 243, 255, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(176, 0, 255, 0.08) 0%, transparent 40%);
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .portal-wrapper {
+            width: 100%;
+            max-width: 480px;
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-radius: 28px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 243, 255, 0.1);
+            padding: 35px 25px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .portal-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-glow), var(--secondary-glow), var(--primary-glow));
+            background-size: 200% auto;
+            animation: shimmer 4s linear infinite;
+        }
+        @keyframes shimmer {
+            to { background-position: 200% center; }
+        }
+        .verified-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(0, 243, 255, 0.08);
+            color: var(--primary-glow);
+            font-size: 11px;
+            font-weight: 700;
+            padding: 6px 14px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(0, 243, 255, 0.3);
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+        }
+        .verified-badge::before {
+            content: '✔';
+            font-size: 10px;
+        }
+        .avatar-container {
+            position: relative;
+            width: 130px;
+            height: 130px;
+            margin: 0 auto 15px;
+        }
+        .avatar-container::after {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--primary-glow), var(--secondary-glow));
+            z-index: -1;
+            opacity: 0.7;
+            filter: blur(4px);
+        }
+        .avatar-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 3px solid #1a1a24;
+            object-fit: cover;
+            background: #111;
+        }
+        .holder-name {
+            font-size: 21px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 4px;
+            letter-spacing: 0.5px;
+        }
+        .holder-id {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--primary-glow);
+            margin-bottom: 15px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+        .brand-title {
+            font-size: 20px;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 4px;
+            letter-spacing: 0.5px;
+        }
+        .brand-subtitle {
+            color: #a0a0b0;
+            font-size: 12.5px;
+            font-weight: 500;
+            margin-bottom: 22px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .specs-box {
+            background: rgba(15, 15, 22, 0.6);
+            border-radius: 16px;
+            padding: 18px;
+            margin-bottom: 20px;
+            text-align: left;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-left: 4px solid var(--primary-glow);
+        }
+        .specs-box h3 {
+            font-size: 12.5px;
+            color: var(--primary-glow);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .specs-list {
+            list-style-type: none;
+            font-size: 12px;
+            color: #c0c0d0;
+            line-height: 1.8;
+        }
+        .specs-list li strong {
+            color: #ffffff;
+        }
+        .specs-list li {
+            position: relative;
+            padding-left: 14px;
+            margin-bottom: 4px;
+        }
+        .specs-list li::before {
+            content: "▪";
+            position: absolute;
+            left: 0;
+            color: var(--secondary-glow);
+        }
+        .action-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 22px;
+        }
+        .nav-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #00f3ff, #0066ff);
+            color: white;
+            padding: 13px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 13.5px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(0, 243, 255, 0.2);
+        }
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 243, 255, 0.35);
+            opacity: 0.95;
+        }
+        .nav-btn.youtube {
+            background: linear-gradient(135deg, #ff0033, #cc0000);
+            box-shadow: 0 4px 15px rgba(255, 0, 51, 0.25);
+        }
+        .nav-btn.facebook {
+            background: linear-gradient(135deg, #0088ff, #0044cc);
+            box-shadow: 0 4px 15px rgba(0, 136, 255, 0.25);
+        }
+        .nav-btn.hotline {
+            background: linear-gradient(135deg, #00b09b, #96c93d);
+            box-shadow: 0 4px 15px rgba(0, 176, 155, 0.25);
+        }
+        .disclaimer-box {
+            font-size: 10px;
+            color: #8a8a9a;
+            background: rgba(10, 10, 14, 0.8);
+            padding: 14px;
+            border-radius: 12px;
+            border: 1px dashed rgba(255, 255, 255, 0.1);
+            line-height: 1.5;
+            margin-bottom: 18px;
+            text-align: justify;
+        }
+        .disclaimer-box strong {
+            color: #d0d0e0;
+        }
+        .system-footer {
+            font-size: 10.5px;
+            color: #555566;
+            letter-spacing: 1px;
+            font-weight: 600;
+            text-transform: uppercase;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="portal-wrapper">
+        <div class="verified-badge">Official Digital Credentials</div>
+        
+        <!-- পাসপোর্ট সাইজ ছবি -->
+        <div class="avatar-container">
+            <img src="https://i.ibb.co.com/4wL5YWYg/image.png" alt="MD. Romjan Chowdhury" class="avatar-img">
+        </div>
+        
+        <!-- কার্ড অনুযায়ী নাম ও আইডি -->
+        <div class="holder-name">MD. ROMJAN CHOWDHURY</div>
+        <div class="holder-id">SECURE ID: RSK-2026-001</div>
+
+        <!-- ব্র্যান্ড ও চ্যানেল নাম -->
+        <div class="brand-title">DJ RSK MUSIC BD</div>
+        <div class="brand-subtitle">Official Music Remix & Broadcasting Network</div>
+        
+        <!-- সুনির্দিষ্ট প্রাতিষ্ঠানিক ও আইনি তথ্যাবলি -->
+        <div class="specs-box">
+            <h3>⚙️ Operational & Legal Metadata</h3>
+            <ul class="specs-list">
+                <li><strong>Enterprise Name:</strong> আরএসকে মিউজিক বিডি (RSK Music BD)</li>
+                <li><strong>Core Channel:</strong> ডিজে আরএসকে মিউজিক বিডি (DJ RSK Music BD)</li>
+                <li><strong>Legal Proprietor:</strong> মোঃ রমজান চৌধুরী (Md. Romjan Chowdhury)</li>
+                <li><strong>Domain of Operation:</strong> Audio Production, Remixing & Live Streaming</li>
+                <li><strong>Geographic Location:</strong> Sreepur, Magura, Khulna Division, Bangladesh</li>
+                <li><strong>Official Enterprise Hotline:</strong> +880 9658-646570</li>
+            </ul>
+        </div>
+        
+        <!-- অফিশিয়াল লিংকসমূহ -->
+        <div class="action-links">
+            <a href="https://youtube.com/@djrskmusicbd?si=EWQYn8gY1-_P9h6T" target="_blank" class="nav-btn youtube">
+                🔴 Connect on YouTube (DJ RSK Music BD)
+            </a>
+            <a href="https://www.facebook.com/share/19UVsP5jmN/" target="_blank" class="nav-btn facebook">
+                🔵 Official Facebook Network & Page
+            </a>
+            <a href="tel:+8809658646570" class="nav-btn hotline">
+                📞 Direct Secure Hotline: +880 9658-646570
+            </a>
+        </div>
+
+        <!-- সর্বোচ্চ আইনি সুরক্ষা ও কমপ্লায়েন্স ডিসক্লেইমার -->
+        <div class="disclaimer-box">
+            <strong>COMPLIANCE & LEGAL DISCLAIMER:</strong> This cryptographic digital verification portal and identification pass belong exclusively to <b>RSK Music BD</b> and its principal brand <b>DJ RSK Music BD</b>, governed under the direct independent sole proprietorship of <b>Md. Romjan Chowdhury</b>, stationed at Sreepur, Magura, Bangladesh. This interface serves strictly as an authenticated digital credential for creator identification, brand authority validation, and authorized media streaming administration. <b>NOTICE:</b> This entity and its credentials are <b>NOT</b> affiliated with, endorsed by, or operating as any news agency, press syndicate, television broadcast network, or government journalism organization. All intellectual properties, audio assets, digital branding elements, and system architectures are legally protected under international copyright frameworks. Unauthorized duplication, fraudulent impersonation, or misuse of this digital pass will invite strict legal repercussions under applicable cyber and intellectual property laws.
+        </div>
+
+        <div class="system-footer">
+            SECURE ENCRYPTED GATEWAY • AUTH ID: RSK-2026-001
+        </div>
+    </div>
+
+</body>
+</html>
